@@ -10,10 +10,8 @@ export const FeedPage = () => {
   const { id } = useParams()
   const navigate = useNavigate()
   const [router, setRouter] = useState<Router>()
-  // id роутера, у которого раскрыто описание («Ещё»/«Меньше»); у следующего снова свёрнуто
   const [expandedId, setExpandedId] = useState<number>()
 
-  // при смене id в адресе загружаем роутер: без id — первый опубликованный
   useEffect(() => {
     getRouterFeed(id).then(setRouter)
   }, [id])

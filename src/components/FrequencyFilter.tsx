@@ -13,7 +13,6 @@ interface Props {
   buttonTitle?: string
 }
 
-// Фильтр плитки: два ползунка «от/до» по частоте, ГГц, и кнопка поиска
 export const FrequencyFilter = ({
   freqMin,
   freqMax,

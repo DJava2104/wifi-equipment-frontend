@@ -3,8 +3,6 @@ import { Outlet } from 'react-router-dom'
 import { TabBar } from './components/TabBar'
 import type { Router } from './modules/routersApi'
 
-// Общее состояние вложенных страниц — последний загруженный список роутеров.
-// Передаётся через context у <Outlet> (это не React Context).
 export type AppOutletContext = {
   routers: Router[]
   setRouters: (routers: Router[]) => void

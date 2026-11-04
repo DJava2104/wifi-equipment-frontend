@@ -7,7 +7,6 @@ interface Props {
   routers: Router[]
 }
 
-// Нижняя панель из 4 пунктов: доступны только «Лента» и «Плитка» (гость, лаб. 5)
 export const TabBar = ({ routers }: Props) => {
   const location = useLocation()
   const navigate = useNavigate()
@@ -16,7 +15,6 @@ export const TabBar = ({ routers }: Props) => {
   const isTile = location.pathname === ROUTES.TILE
 
   const goFeed = () => {
-    // как в лаб. 1: из панели лента открывается без id, либо с первой карточки из плитки
     navigate(routers.length ? `${ROUTES.FEED}/${routers[0].id_routers}` : ROUTES.FEED)
   }
 

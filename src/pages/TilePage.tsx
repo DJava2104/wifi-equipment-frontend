@@ -9,7 +9,6 @@ import { ROUTES } from '../Routes'
 import './TilePage.css'
 
 const TilePage = () => {
-  // фильтр хранится в адресе (?freq_min=&freq_max=) — сохраняется после поиска и при возврате
   const [searchParams, setSearchParams] = useSearchParams()
   const appliedMin = Number(searchParams.get('freq_min') ?? FREQ_MIN)
   const appliedMax = Number(searchParams.get('freq_max') ?? FREQ_MAX)
@@ -17,7 +16,6 @@ const TilePage = () => {
   const [freqMin, setFreqMin] = useState(appliedMin)
   const [freqMax, setFreqMax] = useState(appliedMax)
   const [routers, setRouterList] = useState<Router[]>([])
-  // для какого фильтра уже пришёл ответ; пока не совпадает с текущим — идёт загрузка
   const [loadedFilter, setLoadedFilter] = useState('')
   const filterKey = `${appliedMin}-${appliedMax}`
   const loading = loadedFilter !== filterKey

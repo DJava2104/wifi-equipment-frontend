@@ -1,8 +1,5 @@
 import type { Router } from './routersApi'
 
-// Mock-коллекция опубликованных роутеров — единственный источник данных в лаб. 5 (без бэкенда).
-// Поля image_url и video_url пустые, поэтому у всех карточек показываются
-// изображение и видео по умолчанию из public/ (DefaultImage.svg, DefaultVideo.mp4).
 export const ROUTERS_MOCK: Router[] = [
   {
     id_routers: 1,

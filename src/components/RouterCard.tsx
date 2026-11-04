@@ -8,7 +8,6 @@ interface Props {
   onClick: (id: number) => void
 }
 
-// Карточка роутера на странице «Плитка»
 export const RouterCard = ({ router, onClick }: Props) => (
   <Card className="router-card" onClick={() => onClick(router.id_routers)}>
     <Card.Img
