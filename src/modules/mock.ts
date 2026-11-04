@@ -1,0 +1,103 @@
+import type { Router } from './routersApi'
+
+// Mock-коллекция опубликованных роутеров — единственный источник данных в лаб. 5 (без бэкенда).
+// Поля image_url и video_url пустые, поэтому у всех карточек показываются
+// изображение и видео по умолчанию из public/ (DefaultImage.svg, DefaultVideo.mp4).
+export const ROUTERS_MOCK: Router[] = [
+  {
+    id_routers: 1,
+    title: 'TP-Link Archer AX73',
+    standard: 'Wi-Fi 6 (802.11ax)',
+    max_speed: 4804,
+    band: '5 ГГц',
+    antennas: '6 антенн',
+    frequency: 5,
+    image_url: '',
+    video_url: '',
+    description:
+      'Мощный роутер Wi-Fi 6 с высокой скоростью и поддержкой OFDMA. Хорошо держит сигнал даже через несколько стен и подходит для домов с большим количеством подключённых устройств.',
+    like_count: 3,
+    is_liked: 0,
+    is_creator: 0,
+  },
+  {
+    id_routers: 2,
+    title: 'TP-Link Archer AX55',
+    standard: 'Wi-Fi 6 (802.11ax)',
+    max_speed: 2400,
+    band: '5 ГГц',
+    antennas: '4 антенны',
+    frequency: 5,
+    image_url: '',
+    video_url: '',
+    description:
+      'Компактный и доступный роутер с хорошим покрытием квартиры. Оптимален для видеозвонков, потокового видео и работы нескольких смартфонов одновременно.',
+    like_count: 0,
+    is_liked: 0,
+    is_creator: 0,
+  },
+  {
+    id_routers: 3,
+    title: 'ASUS RT-AX86U',
+    standard: 'Wi-Fi 6 (802.11ax)',
+    max_speed: 5700,
+    band: '5 ГГц',
+    antennas: '4 антенны',
+    frequency: 5,
+    image_url: '',
+    video_url: '',
+    description:
+      'Игровой роутер с низкой задержкой и мощным процессором. Приоритизирует игровой трафик и стабильно работает под большой нагрузкой сети.',
+    like_count: 2,
+    is_liked: 0,
+    is_creator: 0,
+  },
+  {
+    id_routers: 4,
+    title: 'Xiaomi Router BE7000',
+    standard: 'Wi-Fi 7 (802.11be)',
+    max_speed: 6933,
+    band: '6 ГГц',
+    antennas: '6 антенн',
+    frequency: 6,
+    image_url: '',
+    video_url: '',
+    description:
+      'Роутер нового поколения Wi-Fi 7 с впечатляющей скоростью. Поддерживает диапазон 6 ГГц и меньше подвержен помехам от соседних сетей.',
+    like_count: 4,
+    is_liked: 0,
+    is_creator: 0,
+  },
+  {
+    id_routers: 5,
+    title: 'Keenetic Giga KN-1011',
+    standard: 'Wi-Fi 6 (802.11ax)',
+    max_speed: 1800,
+    band: '2.4 ГГц',
+    antennas: '4 антенны',
+    frequency: 2.4,
+    image_url: '',
+    video_url: '',
+    description:
+      'Надёжный домашний роутер с простой настройкой через приложение. Подходит для небольших квартир, где не требуется максимальная скорость.',
+    like_count: 1,
+    is_liked: 0,
+    is_creator: 0,
+  },
+  {
+    id_routers: 6,
+    title: 'ROG Rapture GT-BE98',
+    standard: 'Wi-Fi 7 (802.11be)',
+    max_speed: 25000,
+    band: '6 ГГц',
+    antennas: '8 антенн',
+    frequency: 6,
+    image_url: '',
+    video_url: '',
+    description:
+      'Флагманский игровой роутер ASUS с поддержкой Wi-Fi 7. Работает сразу в четырёх диапазонах и рассчитан на требовательные домашние сети.',
+    like_count: 0,
+    is_liked: 0,
+    is_creator: 0,
+  },
+]

@@ -1,0 +1,74 @@
+/* Общий стиль приложения — тот же, что в лаб. 1 (Jinja2-шаблоны бэкенда) */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --white: #ffffff;
+  --light: #f3f4f6;
+  --text-dark: #111827;
+  --text-secondary: #6b7280;
+  --like: #ef4444;
+  --speed: #10b981;
+  --border: #e5e7eb;
+  --hover-pink: #ffe4ec;
+  --hover-pink-border: #f9a8c9;
+  --mono: ui-monospace, 'JetBrains Mono', 'SF Mono', Consolas, 'Courier New', monospace;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #0b1020 0%, #1f2937 100%);
+}
+
+.app-body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Корпус телефона */
+.phone {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 9 / 16;
+  background: var(--white);
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.screen-header {
+  flex: none;
+  padding: 28px 24px 14px;
+  background: var(--white);
+}
+
+.screen-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+
+.screen-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 4px 24px 92px;
+}
+
+.screen-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.screen-scroll::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
