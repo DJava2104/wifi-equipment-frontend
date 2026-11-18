@@ -1,0 +1,63 @@
+.add-form .section-label {
+  margin: 8px 0 8px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.add-form .form-label {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.add-form .form-control {
+  border-radius: 12px;
+}
+
+.add-btn.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 14px;
+  background: var(--primary);
+  font-weight: 700;
+}
+
+.add-btn.btn:hover,
+.add-btn.btn:focus {
+  background: var(--hover-pink);
+  color: var(--primary);
+}
+
+.draft-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.draft-preview img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.draft-status {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.draft-title {
+  margin: 2px 0 0;
+  font-size: 16px;
+  font-weight: 700;
+}

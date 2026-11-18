@@ -1,21 +1,22 @@
-import { useState } from 'react'
+import { Spinner } from 'react-bootstrap'
 import { Outlet } from 'react-router-dom'
 import { TabBar } from './components/TabBar'
-import type { Router } from './modules/routersApi'
-
-export type AppOutletContext = {
-  routers: Router[]
-  setRouters: (routers: Router[]) => void
-}
+import { useAppSelector } from './store'
 
 export const AppLayout = () => {
-  const [routers, setRouters] = useState<Router[]>([])
+  // пока выполняется любой запрос — анимация поверх экрана блокирует кнопки пользователя
+  const busy = useAppSelector((state) => state.routers.loading || state.feed.loading || state.draft.loading)
 
   return (
     <div className="app-body">
       <div className="phone">
-        <Outlet context={{ routers, setRouters } satisfies AppOutletContext} />
-        <TabBar routers={routers} />
+        <Outlet />
+        <TabBar />
+        {busy && (
+          <div className="busy-overlay" aria-busy="true">
+            <Spinner animation="border" />
+          </div>
+        )}
       </div>
     </div>
   )

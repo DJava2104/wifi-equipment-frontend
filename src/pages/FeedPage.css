@@ -194,3 +194,35 @@
 .desc-toggle:hover {
   background: var(--hover-pink);
 }
+
+button.like-btn {
+  border: none;
+  cursor: pointer;
+}
+
+button.like-btn:disabled {
+  cursor: not-allowed;
+}
+
+.like-btn-active {
+  color: var(--like);
+}
+
+.btn-delete.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--like);
+  font-size: 16px;
+}
+
+.btn-delete.btn:hover,
+.btn-delete.btn:focus {
+  background: var(--hover-pink);
+}
