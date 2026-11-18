@@ -19,7 +19,6 @@ export const LoginPage = () => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({ username: '', password: '' })
   const [error, setError] = useState<string | null>(null)
-  const [info, setInfo] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +32,6 @@ export const LoginPage = () => {
     if (!formData.username || !formData.password) return
     setLoading(true)
     setError(null)
-    setInfo(null)
     try {
       // сервер создаёт сессию в Redis и ставит HttpOnly-куку sessionId
       const response = await authClient.post<AuthResponse>('/login', toForm())
@@ -41,21 +39,6 @@ export const LoginPage = () => {
       navigate(ROUTES.TILE)
     } catch (err) {
       setError(isAxiosError(err) && err.response?.status === 401 ? 'Неверный логин или пароль' : 'Сервер недоступен')
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  const handleRegister = async () => {
-    if (!formData.username || !formData.password) return
-    setLoading(true)
-    setError(null)
-    setInfo(null)
-    try {
-      await authClient.post('/register', toForm())
-      setInfo('Пользователь создан, теперь нажмите «Войти»')
-    } catch (err) {
-      setError(isAxiosError(err) && err.response?.status === 409 ? 'Логин уже занят' : 'Ошибка регистрации')
     } finally {
       setLoading(false)
     }
@@ -70,7 +53,6 @@ export const LoginPage = () => {
       <main className="screen-scroll">
         <Form className="login-form" onSubmit={handleLogin}>
           {error && <Alert variant="danger">{error}</Alert>}
-          {info && <Alert variant="success">{info}</Alert>}
           <Form.Group controlId="username" className="mb-3">
             <Form.Label>Логин</Form.Label>
             <Form.Control
@@ -94,9 +76,6 @@ export const LoginPage = () => {
           </Form.Group>
           <Button type="submit" className="login-btn" disabled={loading}>
             {loading ? <Spinner animation="border" size="sm" /> : 'Войти'}
-          </Button>
-          <Button type="button" variant="link" className="register-btn" disabled={loading} onClick={handleRegister}>
-            Зарегистрироваться
           </Button>
         </Form>
       </main>

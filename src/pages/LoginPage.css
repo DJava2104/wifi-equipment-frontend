@@ -34,11 +34,3 @@
   background: var(--hover-pink);
   color: var(--primary);
 }
-
-.register-btn.btn {
-  margin-top: 6px;
-  color: var(--primary);
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-}
